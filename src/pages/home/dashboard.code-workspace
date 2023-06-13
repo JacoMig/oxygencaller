@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../../dashboardfrontend/dashboard"
+		},
+		{
+			"path": "../../../../../../../MrLightRGB/source/MrLightRGBWeb"
+		},
+		{
+			"path": "../../../../../../../ramcommweb_devExpress/source/ramcomm"
+		},
+		{
+			"path": "../../../../../../../CGWeb/source/cgweb"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {}
+}

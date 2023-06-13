@@ -1,0 +1,126 @@
+
+/* html{
+    background-color: #333;
+    color: #efefef;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+button,
+p,
+div,
+span,
+section{
+    color: #efefef;
+    font-family: "Source Sans Pro";
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+} */
+
+/* textarea,
+input[type="text"]{
+    background: #444;
+    border: 1px #666 solid;
+    color: #cdcdcd;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    line-height: 1.25;
+    font-size: 1.125rem;
+}
+textarea{
+    height: 4rem;
+    width: 100%;
+}
+input[type="text"]{
+    display: inline-block;
+    font-size: 1rem;
+}
+button{
+    background-color: #666;
+    border: #333;
+    color: #cdcdcd;
+    cursor: pointer;
+    margin-left: 1rem;
+    width: 10rem;
+} */
+
+/** Conversation List **/
+/* 
+.conversation-list .message{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    white-space: pre-wrap;
+} */
+
+/** Scrollbar Styles **/
+/* .conversation-list::-webkit-scrollbar {
+    width: 1em;
+} */
+/* 
+.conversation-list::-webkit-scrollbar-track {
+    background-color: #f9f9f9;
+}
+
+.conversation-list::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 10rem;
+    outline: 1px solid slategrey;
+} */
+.chatContainer{
+    border: 1px #666 solid;
+    border-radius: 0px;
+    height: 400px;
+    padding: 0 3rem;
+    position: relative;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+.messageUser{
+    border: 1px #666 solid;
+    background: linear-gradient(90deg, rgb(102, 50, 1) 0%, rgb(118, 47, 3) 35%, rgb(204, 92, 6) 100%);
+    border-radius: 5px;
+    padding:0 1rem;
+    position: relative;
+    margin-left: auto; 
+    margin-right: 0;
+    text-align:justify;
+    width: fit-content;
+    max-width: 70%;
+    word-wrap: break-word;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.messageOther{
+    border: 1px #666 solid;
+    background: linear-gradient(90deg, rgb(2, 17, 84) 0%, rgb(7, 2, 133) 49%, rgb(13, 7, 186) 100%);
+    border-radius: 5px;
+    padding:0 1rem;
+    position: relative;
+    width: max-content;
+    max-width: 70%;
+    word-wrap: break-word;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.messageUserCaptionUser{
+    text-align: right;
+}
+
+.messageUserCaptionOther{
+    text-align: left;
+}
