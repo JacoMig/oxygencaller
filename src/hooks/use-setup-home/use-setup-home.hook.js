@@ -37,7 +37,7 @@ const useSetupHome = () => {
         soundMeterLocal,
         setDebugMessage,
         username,
-        room,
+        room.current,
         meterRefresh)
 
     useEffect(()=>

@@ -27,7 +27,7 @@ const position = { of: '#divContainer' };
 export default function Home(props) {
     const { /* user, */ signOut } = useAuth();
 
-    const [isCoughPressed, setIsCoughPressed]=useState(false)
+   // const [isCoughPressed, setIsCoughPressed]=useState(false)
     const [text, setText] = useState('');
   
 
@@ -49,9 +49,11 @@ export default function Home(props) {
         setMessages} = useSetupHome()
 
  
-    const callback = useCallback(event => {
+    /* unused function
+        const callback = useCallback(event => {
         console.log('Long pressed!');
-      }, []);
+      }, []); */
+    /* unused function
     const objUseLongPress = useLongPress(callback, {
         onStart: event => console.log('Press started'),
         onFinish: event => console.log('Long press finished'),
@@ -62,7 +64,7 @@ export default function Home(props) {
         captureEvent: true,
         cancelOnMovement: false,
         detect: 'both',
-    });
+    }); */
 
 
     const cmdLogoutClick=function(){
@@ -120,13 +122,14 @@ export default function Home(props) {
         webrtc.current.sendDataChannelMessageToAll(textToSend);
     }
 
+    /*  unused function
     const cmdCoughClick=()=>{
         var message={command:'cough', data:{type: 'CoughData', pressed: !isCoughPressed}}
         var textToSend=JSON.stringify(message);
         webrtc.current.sendDataChannelMessageToAll(textToSend);
 
         setIsCoughPressed(!isCoughPressed);
-    }
+    } */
 
     const hVumeter=10;
   return (
