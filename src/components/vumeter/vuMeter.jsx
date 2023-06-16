@@ -200,7 +200,7 @@ function VuMeter(props) {
     return (
         <Grid sx={meterBackground} container xs ={12}>
 
-            <Meter  color={color} xs ={12}> 
+            <Meter  color={color.toString()} xs ={12}> 
 
             </Meter>
 
