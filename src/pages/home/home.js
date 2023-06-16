@@ -9,7 +9,7 @@ import { Button } from 'devextreme-react/button';
 import Grid from '@mui/material/Unstable_Grid2';
 
 
-import { useLongPress } from 'use-long-press';
+
 import VuMeter from '../../components/vumeter/vuMeter';
 
 import '../../layouts/single-card/single-card';

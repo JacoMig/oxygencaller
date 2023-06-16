@@ -10,7 +10,8 @@ export const useAddEventToWebRTC = function (
     setDebugMessage,
     username,
     room,
-    meterRefresh
+    meterRefresh,
+    setIsConnecting
 ) {
     // console.log('addEventToWebRTC');
     const [bMessageArrived, setBMessageArrived] = useState(false);
@@ -24,6 +25,7 @@ export const useAddEventToWebRTC = function (
         if (webrtc.current) {
             webrtc.current.on('connectionReady', function (sessionID) {
                 console.log('connectionReady with ID: ', sessionID);
+                setIsConnecting(false)
             });
         
             webrtc.current.on('videoRemoved', function (video, peer) {

@@ -21,7 +21,6 @@ const useSetupHome = () => {
     const [vuMeterValue, setVuMeterValue]= useState({left:0, right:0});
     const [vuMeterLocalValue, setVuMeterLocalValue]= useState({left:0, right:0});
     const defaultVumeterValue=-60.0;
-    const defaultWaitForConnection=5000;
     const [meForChat, setMeForchat]= useState('');
 
     const {
@@ -38,7 +37,8 @@ const useSetupHome = () => {
         setDebugMessage,
         username,
         room.current,
-        meterRefresh)
+        meterRefresh,
+        setIsConnecting)
 
     useEffect(()=>
     {
@@ -76,20 +76,12 @@ const useSetupHome = () => {
             alert('Web Audio API not supported.');
             setDebugMessage('Web Audio API not supported.')
         }
+        
+        
+    },[]);
 
-        setTimeout(() => {
-            // aspetto 2 sec per vedere se mi è arrivato un messaggio!!!
-            setIsConnecting(false);
-            // if(bMessageArrived===true)
-            // {
-            //     setIsConnecting(false);
-            // }
-            // else
-            // {
-            //     setIsConnecting(false);
-            //     setPopupMessage("Connection not allowed. Logging out...");
-            //     setIsPopupVisible(true);
-            // }
+    useEffect(()=> {
+        if(!isConnecting) {
             meterRefresh.current = setInterval(() => 
             {
                 if(soundMeterLocal.current)
@@ -111,13 +103,12 @@ const useSetupHome = () => {
                     setVuMeterValue({left:defaultVumeterValue, right:defaultVumeterValue})
                 }    
             }, 200);    
-        }, defaultWaitForConnection);
-         
+        }
 
         return () => {
             clearInterval(meterRefresh.current);
           };
-    },[]);
+    },[isConnecting]);
 
 
     return {
@@ -126,15 +117,11 @@ const useSetupHome = () => {
         meterRefresh: meterRefresh.current,
         isPopupVisible,
         setIsPopupVisible,
-        debugMessage,
-        setDebugMessage,
         popupMessage,
         isConnecting,
         vuMeterValue,
         vuMeterLocalValue,
         meForChat,
-        soundMeterLocal,
-        soundMeterRemote,
         webrtc,
         username,
         messages,
@@ -144,7 +131,6 @@ const useSetupHome = () => {
         setMessages
     }
 }
-
 
 
 
